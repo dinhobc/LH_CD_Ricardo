@@ -13,7 +13,7 @@ README.md - Instruções sobre instalação e execução do projeto.
 🚀 Instalação e Execução
 
 Clone este repositório:
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/dinhobc/LH_CD_Ricardo.git
 cd seu-repositorio
 
 Crie um ambiente virtual (opcional, mas recomendado):
