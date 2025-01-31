@@ -1,0 +1,107 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "aea80090-8813-452e-8aed-ea58255685b8",
+   "metadata": {},
+   "source": [
+    "### 4. Supondo um apartamento com as seguintes características:\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9bec3059-77eb-4604-8d0a-1bdbc0298137",
+   "metadata": {},
+   "source": [
+    "##### Qual seria a sua sugestão de preço?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 128,
+   "id": "6c564a3a-f5da-4f5d-b7bc-2257f8490a0e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Preço estimado: $303.34\n"
+     ]
+    }
+   ],
+   "source": [
+    "novo_apartamento = {\n",
+    "    \"latitude\": 40.75362,\n",
+    "    \"longitude\": -73.98377,\n",
+    "    \"numero_de_reviews\": 45,\n",
+    "    \"disponibilidade_365\": 355,\n",
+    "    \"calculado_host_listings_count\": 2,\n",
+    "    \"room_type_Private room\": 0,  \n",
+    "    \"room_type_Shared room\": 0 \n",
+    "}\n",
+    "\n",
+    "novo_ap_df = pd.DataFrame([novo_apartamento])\n",
+    "novo_ap_df = novo_ap_df.reindex(columns=X.columns, fill_value=0)  \n",
+    "\n",
+    "novo_ap_norm = scaler.transform(novo_ap_df)\n",
+    "\n",
+    "preco_predito = model.predict(novo_ap_norm)\n",
+    "\n",
+    "print(f\"Preço estimado: ${preco_predito[0]:.2f}\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 129,
+   "id": "86b4c319-4a69-480f-b16d-582edb728eeb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import joblib  "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 130,
+   "id": "bfb2a2dd-3e09-4946-b849-727f66aae37b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['modelo_precificacao.pkl']"
+      ]
+     },
+     "execution_count": 130,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "joblib.dump(model, \"modelo_precificacao.pkl\")  "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
