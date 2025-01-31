@@ -2,8 +2,6 @@
 
 notebooks/ - Contém notebooks com a análise exploratória dos dados (EDA) e modelagem.
 
-data/ - Contém os arquivos de dados utilizados no projeto.
-
 models/ - Contém o modelo treinado salvo em formato .pkl.
 
 requirements.txt - Lista de dependências necessárias para rodar o projeto.
