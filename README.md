@@ -1,5 +1,7 @@
 📂 Estrutura do Repositório
 
+Link do vídeo explicando o projeto: https://drive.google.com/file/d/1r-nw2HAOsmlxfPYOViDxoPXiKHGZaDUA/view?usp=drivesdk
+
 notebooks/ - Contém notebooks com a análise exploratória dos dados (EDA) e modelagem.
 
 models/ - Contém o modelo treinado salvo em formato .pkl.
